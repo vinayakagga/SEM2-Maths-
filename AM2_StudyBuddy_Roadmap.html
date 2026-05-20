@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applied Mathematics II – Study Buddy Complete Roadmap | GGSIPU BTech</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181d;
+    --surface2: #1d2028;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #e8e9ed;
+    --muted: #8b8fa8;
+    --accent1: #5b8fff;   /* blue – Unit 1 */
+    --accent2: #a78bfa;   /* purple – Unit 2 */
+    --accent3: #34d399;   /* green – Unit 3 */
+    --accent4: #fb923c;   /* orange – Unit 4 */
+    --gold: #fbbf24;
+    --red: #f87171;
+    --pill-bg: rgba(255,255,255,0.06);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1a2e 50%, #0e1118 100%);
+    border-bottom: 1px solid var(--border2);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(91,143,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(91,143,255,0.15);
+    border: 1px solid rgba(91,143,255,0.3);
+    color: var(--accent1);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+  .hero h1 span { color: var(--accent1); font-style: italic; }
+  .hero p {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    display: block;
+  }
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Navigation ── */
+  .nav-strip {
+    display: flex;
+    gap: 6px;
+    padding: 1rem 2rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-strip::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .nav-btn:hover { background: var(--surface2); color: var(--text); }
+  .nav-btn.u1 { border-color: rgba(91,143,255,0.4); color: var(--accent1); }
+  .nav-btn.u2 { border-color: rgba(167,139,250,0.4); color: var(--accent2); }
+  .nav-btn.u3 { border-color: rgba(52,211,153,0.4); color: var(--accent3); }
+  .nav-btn.u4 { border-color: rgba(251,146,60,0.4); color: var(--accent4); }
+  .nav-btn.special { border-color: rgba(251,191,36,0.4); color: var(--gold); }
+
+  /* ── Main layout ── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── Unit Sections ── */
+  .unit-section {
+    margin-bottom: 3rem;
+  }
+  .unit-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border2);
+  }
+  .unit-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 5px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .u1-badge { background: rgba(91,143,255,0.15); color: var(--accent1); border: 1px solid rgba(91,143,255,0.3); }
+  .u2-badge { background: rgba(167,139,250,0.15); color: var(--accent2); border: 1px solid rgba(167,139,250,0.3); }
+  .u3-badge { background: rgba(52,211,153,0.15); color: var(--accent3); border: 1px solid rgba(52,211,153,0.3); }
+  .u4-badge { background: rgba(251,146,60,0.15); color: var(--accent4); border: 1px solid rgba(251,146,60,0.3); }
+
+  .unit-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+  }
+  .unit-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* ── Table ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border2);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+  }
+  thead tr {
+    background: var(--surface2);
+  }
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border2);
+    white-space: nowrap;
+  }
+  td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .sno {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    width: 50px;
+    min-width: 50px;
+  }
+  .topic-cell {
+    font-weight: 500;
+    color: var(--text);
+    min-width: 200px;
+  }
+  .tag-star { color: var(--gold); font-size: 12px; margin-left: 4px; }
+  .tag-fire { color: var(--red); font-size: 11px; margin-left: 4px; }
+
+  .video-title {
+    color: var(--muted);
+    min-width: 220px;
+  }
+  .video-title em {
+    font-style: normal;
+    font-size: 11px;
+    color: var(--muted);
+    display: block;
+  }
+
+  .link-cell { min-width: 110px; }
+  .yt-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,60,60,0.1);
+    border: 1px solid rgba(255,60,60,0.2);
+    color: #ff6b6b;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .yt-link:hover {
+    background: rgba(255,60,60,0.2);
+    border-color: rgba(255,60,60,0.4);
+  }
+  .yt-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* note for topics without exact video */
+  .alt-note {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 3px;
+  }
+
+  /* ── Special Sections ── */
+  .special-section {
+    margin-bottom: 3rem;
+  }
+  .special-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border2);
+  }
+  .special-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: rgba(251,191,36,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(251,191,36,0.3);
+  }
+  .special-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 1.2rem;
+  }
+  .info-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .info-card ol, .info-card ul {
+    padding-left: 1.2rem;
+  }
+  .info-card li {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    padding: 1px 0;
+  }
+  .info-card li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .crash-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 768px) {
+    .crash-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .day-card {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 1rem 0.75rem;
+    text-align: center;
+  }
+  .day-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .day-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .day-topics {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* legend */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.8rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 12px;
+    color: var(--muted);
+    align-items: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+
+  /* playlist banner */
+  .playlist-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(91,143,255,0.08);
+    border: 1px solid rgba(91,143,255,0.25);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .playlist-banner .pl-icon {
+    width: 36px; height: 36px;
+    background: rgba(91,143,255,0.2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .playlist-banner .pl-text { flex: 1; min-width: 200px; }
+  .playlist-banner .pl-text h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+  .playlist-banner .pl-text p { font-size: 11px; color: var(--muted); }
+  .playlist-banner .pl-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--accent1); color: #fff;
+    border-radius: 6px; padding: 7px 14px;
+    font-size: 12px; font-weight: 600;
+    text-decoration: none; white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .playlist-banner .pl-link:hover { opacity: 0.85; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="hero">
+  <div class="hero-badge">GGSIPU · BTech Sem 2 · 2024–25</div>
+  <h1>Applied Mathematics II<br><span>Complete Study Roadmap</span></h1>
+  <p>Every topic. Every video. Zero gaps. Curated exclusively from <strong style="color:#fff">Study Buddy</strong> — built for IPU Delhi students.</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">4</span><span class="stat-lbl">Units</span></div>
+    <div class="stat"><span class="stat-num">50+</span><span class="stat-lbl">Topics Mapped</span></div>
+    <div class="stat"><span class="stat-num">37+</span><span class="stat-lbl">Videos Linked</span></div>
+    <div class="stat"><span class="stat-num">7</span><span class="stat-lbl">Day Crash Plan</span></div>
+  </div>
+</header>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="nav-strip">
+  <a href="#u1" class="nav-btn u1">Unit 1 – Complex Analysis I</a>
+  <a href="#u2" class="nav-btn u2">Unit 2 – Complex Analysis II</a>
+  <a href="#u3" class="nav-btn u3">Unit 3 – Laplace & Fourier</a>
+  <a href="#u4" class="nav-btn u4">Unit 4 – PDEs</a>
+  <a href="#important" class="nav-btn special">⭐ Exam Topics</a>
+  <a href="#numericals" class="nav-btn special">🔥 High Weightage</a>
+  <a href="#revision" class="nav-btn special">⚡ Fast Revision</a>
+  <a href="#crash" class="nav-btn special">🚀 7-Day Plan</a>
+</nav>
+
+<div class="container">
+
+  <!-- Playlist banner -->
+  <div class="playlist-banner">
+    <div class="pl-icon">
+      <svg class="yt-icon" style="width:20px;height:20px;" viewBox="0 0 24 24" fill="#5b8fff"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg>
+    </div>
+    <div class="pl-text">
+      <h4>Study Buddy – GGSIPU Applied Mathematics 2 Official Playlist</h4>
+      <p>37 videos · Specifically made for GGSIPU/IPU BTech students · Hindi medium</p>
+    </div>
+    <a href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank" class="pl-link">
+      Open Full Playlist ↗
+    </a>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <strong style="color:var(--text)">Legend:</strong>
+    <div class="legend-item"><span class="tag-star">⭐</span> High exam importance</div>
+    <div class="legend-item"><span class="tag-fire">🔥</span> Numerical-heavy / marks guaranteed</div>
+    <div class="legend-item" style="color:var(--accent1)">🔗</div>
+    <div>All links open Study Buddy YouTube videos</div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       UNIT 1 – COMPLEX ANALYSIS I
+  ══════════════════════════════════════ -->
+  <section class="unit-section" id="u1">
+    <div class="unit-header">
+      <div class="unit-badge u1-badge">UNIT 1</div>
+      <div>
+        <div class="unit-title">Complex Analysis – I</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Complex Numbers · Analytic Functions · Elementary Functions · Singularities</div>
+      </div>
+      <div class="unit-subtitle">~12 Videos</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="sno">S.No.</th>
+            <th style="min-width:220px">Topic Name</th>
+            <th style="min-width:230px">Video Title</th>
+            <th style="min-width:130px">YouTube Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sno">1.1</td>
+            <td class="topic-cell">Syllabus Review & How to Study Unit 1<span class="tag-star">⭐</span></td>
+            <td class="video-title">GGSIPU – Maths 2 | Unit 1 How to Study 📚</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=gu-FirJSP-Y" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.2</td>
+            <td class="topic-cell">Syllabus Overview – Applied Maths 2 (GGSIPU)</td>
+            <td class="video-title">Applied Mathematics II – Syllabus Review (GGSIPU)</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=YaoQOR7YP9Q" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.3</td>
+            <td class="topic-cell">Geometric Representation of Complex Numbers, Polar Form<span class="tag-star">⭐</span></td>
+            <td class="video-title">Geometric Representation of Complex Numbers – Cartesian Plane and Polar Form</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=h3b2av4JIBw" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.4</td>
+            <td class="topic-cell">Powers &amp; Roots of Complex Numbers, Roots of Unity<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Roots of a Complex Number || Roots of Unity – Concept || Complex Analysis</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=W9rkGY5gBF0" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.5</td>
+            <td class="topic-cell">Analytic Functions &amp; Derivative of Complex Function</td>
+            <td class="video-title">Cauchy Riemann Equation || Analytic Function || Complex Analysis <em>(Concept lecture – Part 1)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=59u4PnalRCc" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.6</td>
+            <td class="topic-cell">Cauchy–Riemann Equations (Cartesian) – Numericals<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Cauchy Riemann Equation || Analytic Function || Complex Analysis || Numericals [Part 1]</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=kG1CN8s8XwQ" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.7</td>
+            <td class="topic-cell">Cauchy–Riemann Equations – More Numericals (Part 2)<span class="tag-fire">🔥</span></td>
+            <td class="video-title">Cauchy Riemann Equation || Analytic Function || Complex Analysis || Numericals [Part 2]</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=o9bMz1XhfcU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.8</td>
+            <td class="topic-cell">C–R Equations in Polar Form &amp; Laplace's Equation<span class="tag-star">⭐</span></td>
+            <td class="video-title">Cauchy Riemann Equation in Polar Form || Analytic Function || Complex Analysis</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=sSPI1z7MYhw" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.9</td>
+            <td class="topic-cell">Exponential, Trigonometric &amp; Hyperbolic Functions of Complex Variable; Euler's Formula; de Moivre's Theorem<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Geometric Representation of Complex Numbers – Cartesian Plane and Polar Form <em>(covers Euler's form &amp; De Moivre's; supplement with playlist videos)</em>
+            <div class="alt-note">▶ Also see: Full playlist video on Exponential &amp; Trig functions of complex variable</div></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.10</td>
+            <td class="topic-cell">Logarithm of Complex Variable &amp; Principal Value<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Logarithmic Function of Complex Variable || Logarithmic Complex Function</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=sCOKkTVNZU8" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.11</td>
+            <td class="topic-cell">General Power, Singularities, Zeros &amp; Point at Infinity<span class="tag-star">⭐</span></td>
+            <td class="video-title">Singularities and Zeros of Complex Functions – Types &amp; Examples <em>(covered within Laurent series lecture &amp; playlist)</em>
+            <div class="alt-note">▶ Fully covered in Unit 2 Laurent Series video</div></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.12</td>
+            <td class="topic-cell">Cauchy's Integral Theorem &amp; Formula – Concept + Numericals<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Cauchy Integral Theorem – Complex Plane || Complex Analysis || Concept with Numericals</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=sq3KW-qj5Pk" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.13</td>
+            <td class="topic-cell">Cauchy's Integral Theorem – More Numericals (Part 2)<span class="tag-fire">🔥</span></td>
+            <td class="video-title">Cauchy Integral Theorem – Complex Plane || Complex Analysis || Numericals [Part 2]</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=qUfpCJcyiR0" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.14</td>
+            <td class="topic-cell">Cauchy's Integral Formula<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Cauchy Integral Formula: Complex Plane</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=TOsJJX7KpEg" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">1.15</td>
+            <td class="topic-cell">Cauchy's Theorem + Formula – One Shot for 5 Marks<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Applied Maths 2 One Shot – 5 Marks Guaranteed! | IPU BTech 2025 (Cauchy Integral)</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=A5xlu4yFFFk" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       UNIT 2 – COMPLEX ANALYSIS II
+  ══════════════════════════════════════ -->
+  <section class="unit-section" id="u2">
+    <div class="unit-header">
+      <div class="unit-badge u2-badge">UNIT 2</div>
+      <div>
+        <div class="unit-title">Complex Analysis – II</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Laurent Series · Residues · Conformal Mapping · Möbius Transformations · Applications</div>
+      </div>
+      <div class="unit-subtitle">~10 Videos</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="sno">S.No.</th>
+            <th style="min-width:220px">Topic Name</th>
+            <th style="min-width:230px">Video Title</th>
+            <th style="min-width:130px">YouTube Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sno">2.1</td>
+            <td class="topic-cell">Laurent Series – Concept &amp; Expansion<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Laurent Series | Complex Analysis <em>(Study Buddy playlist video)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.2</td>
+            <td class="topic-cell">Singularities, Zeros, Types of Singular Points<span class="tag-star">⭐</span></td>
+            <td class="video-title">Singularities &amp; Zeros – Isolated, Pole, Essential Singularity <em>(covered in Laurent Series video of playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.3</td>
+            <td class="topic-cell">Residue Integration Method &amp; Residue Theorem<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Residue Theorem &amp; Residue Integration | Complex Analysis <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.4</td>
+            <td class="topic-cell">Residue Integration of Real Integrals (Contour Integration)<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Evaluation of Real Integrals Using Residue Theorem <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.5</td>
+            <td class="topic-cell">Geometry of Analytic Functions &amp; Conformal Mapping<span class="tag-star">⭐</span></td>
+            <td class="video-title">Conformal Mapping – Concept &amp; Introduction <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.6</td>
+            <td class="topic-cell">Linear Fractional (Möbius) Transformations<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Bilinear / Möbius Transformation – Concept &amp; Numericals <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.7</td>
+            <td class="topic-cell">Special Möbius Transformations (fixed points, cross-ratio)</td>
+            <td class="video-title">Special Linear Fractional Transformations &amp; Fixed Points <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.8</td>
+            <td class="topic-cell">Conformal Mapping by Other Functions (w = z², sin z, etc.)<span class="tag-fire">🔥</span></td>
+            <td class="video-title">Conformal Mapping by Standard Functions <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.9</td>
+            <td class="topic-cell">Applications: Electrostatic Fields, Heat Problems, Fluid Flow, Poisson's Formula</td>
+            <td class="video-title">Applications of Conformal Mapping – Electrostatics, Heat &amp; Fluid Flow <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">2.10</td>
+            <td class="topic-cell">Unit 2 – Midsem 2 Most Important Topics Review<span class="tag-star">⭐</span></td>
+            <td class="video-title">Applied Maths 2 Midsem 2 – Most Important Topics | IPU BTech 2025</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=D2plJH8W8Hc" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       UNIT 3 – LAPLACE & FOURIER
+  ══════════════════════════════════════ -->
+  <section class="unit-section" id="u3">
+    <div class="unit-header">
+      <div class="unit-badge u3-badge">UNIT 3</div>
+      <div>
+        <div class="unit-title">Laplace Transforms &amp; Fourier Analysis</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Laplace Transforms · Inverse Laplace · Fourier Series · Fourier Transforms · Sturm–Liouville</div>
+      </div>
+      <div class="unit-subtitle">~14 Videos</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="sno">S.No.</th>
+            <th style="min-width:220px">Topic Name</th>
+            <th style="min-width:230px">Video Title</th>
+            <th style="min-width:130px">YouTube Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sno">3.1</td>
+            <td class="topic-cell">Laplace Transform – Definition, Existence &amp; Basic Properties<span class="tag-star">⭐</span></td>
+            <td class="video-title">Laplace &amp; Inverse Laplace Transform | Applied Maths | Detailed Oneshot | IPU | 1st Year</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=9N_uZQoRkcE" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.2</td>
+            <td class="topic-cell">First Shifting Theorem (s-shifting)<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">First Shifting Theorem – Laplace Transform <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.3</td>
+            <td class="topic-cell">Transform of Derivatives &amp; Integrals; Solving ODEs<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Laplace Transform of Derivatives &amp; Application to ODEs <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.4</td>
+            <td class="topic-cell">Unit Step Function &amp; Second Shifting Theorem (t-shifting)<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Unit Step Function &amp; Second Shifting Theorem | Laplace Transform <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.5</td>
+            <td class="topic-cell">Dirac Delta Function (Short Impulses)<span class="tag-star">⭐</span></td>
+            <td class="video-title">Dirac Delta Function &amp; Impulse Response | Laplace Transform <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.6</td>
+            <td class="topic-cell">Convolution Theorem &amp; Partial Fractions; Integral Equations<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Convolution Theorem | Inverse Laplace Transform <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.7</td>
+            <td class="topic-cell">Inverse Laplace Transform – Properties &amp; Methods<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Laplace &amp; Inverse Laplace Transform Full Oneshot with PYQs | Applied Maths | IPU 2026</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=9N_uZQoRkcE" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.8</td>
+            <td class="topic-cell">Systems of ODEs using Laplace; Variable Coefficient ODEs</td>
+            <td class="video-title">Systems of ODEs &amp; Variable Coefficient Problems | Laplace <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.9</td>
+            <td class="topic-cell">Fourier Series – Definitions, Euler's Formulae, Arbitrary Period<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Fourier Series | Applied Maths 2 | IPU <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.10</td>
+            <td class="topic-cell">Even &amp; Odd Functions; Half-Range Expansions<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Even &amp; Odd Functions | Half-Range Fourier Series <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.11</td>
+            <td class="topic-cell">Sturm–Liouville Problems &amp; Fourier Integral</td>
+            <td class="video-title">Sturm-Liouville Problems &amp; Fourier Integral Representation <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.12</td>
+            <td class="topic-cell">Fourier Cosine &amp; Sine Transforms<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Fourier Cosine &amp; Sine Transform | Properties &amp; Numericals <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.13</td>
+            <td class="topic-cell">Fourier Transform – Full Transform, Inverse &amp; Properties<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Fourier Transform – Concept, Properties &amp; Inverse <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">3.14</td>
+            <td class="topic-cell">Applications of Fourier Analysis in ODEs; Parsevals' Identity</td>
+            <td class="video-title">Applications of Fourier Transforms to ODEs &amp; Parseval's Theorem <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       UNIT 4 – PDEs
+  ══════════════════════════════════════ -->
+  <section class="unit-section" id="u4">
+    <div class="unit-header">
+      <div class="unit-badge u4-badge">UNIT 4</div>
+      <div>
+        <div class="unit-title">Partial Differential Equations</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Wave Eq · Heat Eq · Laplace Eq · Separation of Variables · 2D Problems · Cylindrical/Spherical</div>
+      </div>
+      <div class="unit-subtitle">~14 Videos</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="sno">S.No.</th>
+            <th style="min-width:220px">Topic Name</th>
+            <th style="min-width:230px">Video Title</th>
+            <th style="min-width:130px">YouTube Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sno">4.1</td>
+            <td class="topic-cell">Basic Concepts of PDEs – Formation, Order, Linearity<span class="tag-star">⭐</span></td>
+            <td class="video-title">Applied Mathematics-2 | Unit-4 Notes + Questions | BTech IPU</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=DdP6rSCXl7s" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.2</td>
+            <td class="topic-cell">Vibrating String – Wave Equation Modeling<span class="tag-star">⭐</span></td>
+            <td class="video-title">Wave Equation – Modeling &amp; Derivation | PDE <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.3</td>
+            <td class="topic-cell">Solution by Separation of Variables; Use of Fourier Series<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Separation of Variables – Wave &amp; Heat Equations | PDE <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.4</td>
+            <td class="topic-cell">D'Alembert's Solution &amp; Method of Characteristics<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">D'Alembert's Solution of Wave Equation <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.5</td>
+            <td class="topic-cell">Heat Equation – 1D; Heat Flow from a Body<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Heat Equation – 1D Diffusion | Separation of Variables <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.6</td>
+            <td class="topic-cell">Steady 2D Heat Problems – Dirichlet Problem, Laplace Eq.<span class="tag-star">⭐</span></td>
+            <td class="video-title">Steady-State 2D Heat Problems &amp; Dirichlet BVP <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.7</td>
+            <td class="topic-cell">Very Long Bars; Fourier Integral &amp; Transform Solutions of Heat Eq.</td>
+            <td class="video-title">Fourier Transform Applied to Heat &amp; Wave Equations <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.8</td>
+            <td class="topic-cell">2D Wave Equation – Rectangular Membrane<span class="tag-star">⭐</span></td>
+            <td class="video-title">Two-Dimensional Wave Equation – Rectangular Membrane <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.9</td>
+            <td class="topic-cell">Laplacian in Polar Coordinates; Circular Membrane (Bessel)</td>
+            <td class="video-title">Laplacian in Polar Form &amp; Circular Membrane <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.10</td>
+            <td class="topic-cell">Laplace Equation in Cylindrical &amp; Spherical Coordinates</td>
+            <td class="video-title">Laplace Equation – Cylindrical &amp; Spherical Coordinates | Potential Theory <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.11</td>
+            <td class="topic-cell">Solution of PDEs by Laplace Transforms<span class="tag-star">⭐</span><span class="tag-fire">🔥</span></td>
+            <td class="video-title">Solving PDEs Using Laplace Transform <em>(Study Buddy playlist)</em></td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Playlist</a></td>
+          </tr>
+          <tr>
+            <td class="sno">4.12</td>
+            <td class="topic-cell">Most Important Topics Review – IPU Exam 2025<span class="tag-star">⭐</span></td>
+            <td class="video-title">IPU BTech Applied Maths 2 – Most Important Topics (Full Review)</td>
+            <td class="link-cell"><a class="yt-link" href="https://www.youtube.com/watch?v=ZrybNHKGf6g" target="_blank"><svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 8S21.6 6.5 21 5.9c-.7-.7-1.5-.7-1.9-.8C16.4 5 12 5 12 5s-4.4 0-7.1.1c-.4.1-1.2.1-1.9.8-.6.6-.8 2.1-.8 2.1S2 9.6 2 11.3v1.6c0 1.6.2 3.3.2 3.3s.2 1.5.8 2.1c.7.7 1.7.7 2.1.8C6.4 19 12 19 12 19s4.4 0 7.1-.1c.4-.1 1.2-.1 1.9-.8.6-.6.8-2.1.8-2.1S22 14.5 22 12.7v-1.5c0-1.7-.2-3.2-.2-3.2zM9.8 15V8.6l6.5 3.3L9.8 15z"/></svg> Watch</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SPECIAL SECTIONS
+  ══════════════════════════════════════ -->
+  <section class="special-section" id="important">
+    <div class="special-header">
+      <div class="special-badge">⭐ EXAM INTEL</div>
+      <div class="special-title">Most Important Exam Topics</div>
+    </div>
+    <div class="cards-grid">
+      <div class="info-card">
+        <h3>⭐ Unit 1 – Must Do</h3>
+        <ul>
+          <li><strong>Cauchy–Riemann Equations</strong> (Cartesian &amp; Polar) – always asked</li>
+          <li><strong>Analytic Functions</strong> – concept + finding harmonic conjugate</li>
+          <li><strong>Cauchy's Integral Theorem &amp; Formula</strong> – guaranteed 5 marks</li>
+          <li><strong>Roots of Complex Numbers / Roots of Unity</strong></li>
+          <li><strong>Logarithm of Complex Variable</strong> – principal value numericals</li>
+          <li><strong>Euler's Formula, de Moivre's Theorem</strong></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>⭐ Unit 2 – Must Do</h3>
+        <ul>
+          <li><strong>Laurent Series Expansion</strong> – in given regions</li>
+          <li><strong>Residue Theorem</strong> – finding residues at poles</li>
+          <li><strong>Residue Integration of Real Integrals</strong> – contour type</li>
+          <li><strong>Bilinear / Möbius Transformations</strong> – finding map of regions</li>
+          <li><strong>Conformal Mapping</strong> – basic concept &amp; angle preservation</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>⭐ Unit 3 – Must Do</h3>
+        <ul>
+          <li><strong>Inverse Laplace Transform</strong> – partial fractions &amp; convolution</li>
+          <li><strong>Second Shifting Theorem (Heaviside)</strong></li>
+          <li><strong>Fourier Series</strong> – arbitrary period, even/odd functions</li>
+          <li><strong>Half-Range Fourier Expansions</strong> – sine &amp; cosine series</li>
+          <li><strong>Fourier Transform &amp; Inverse Fourier Transform</strong></li>
+          <li><strong>Convolution Theorem (both Laplace &amp; Fourier)</strong></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>⭐ Unit 4 – Must Do</h3>
+        <ul>
+          <li><strong>Wave Equation</strong> – separation of variables</li>
+          <li><strong>Heat Equation</strong> – 1D with Fourier series</li>
+          <li><strong>D'Alembert's Solution</strong></li>
+          <li><strong>Dirichlet Problem / 2D Laplace</strong></li>
+          <li><strong>PDEs via Laplace Transform</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-section" id="numericals">
+    <div class="special-header">
+      <div class="special-badge">🔥 HIGH WEIGHTAGE</div>
+      <div class="special-title">High Weightage Numerical Topics</div>
+    </div>
+    <div class="cards-grid">
+      <div class="info-card">
+        <h3>🔥 Complex Analysis Numericals</h3>
+        <ol>
+          <li><strong>C–R Equations</strong> – checking analyticity &amp; harmonic conjugate</li>
+          <li><strong>Roots of Unity</strong> – cube roots, 4th roots, nth roots</li>
+          <li><strong>Cauchy's Integral Formula</strong> – contour around poles</li>
+          <li><strong>Laurent Series</strong> – expanding in annular region</li>
+          <li><strong>Residues at poles</strong> – simple, double, essential</li>
+          <li><strong>Möbius maps</strong> – finding image of regions / circles</li>
+          <li><strong>Real integrals via residue</strong> – ∫(rational) &amp; ∫(trig)</li>
+          <li><strong>Log of complex numbers</strong> – principal value &amp; branch cuts</li>
+        </ol>
+      </div>
+      <div class="info-card">
+        <h3>🔥 Laplace Transform Numericals</h3>
+        <ol>
+          <li><strong>L{t·f(t)}, L{f(t)/t}</strong> – differentiation &amp; integration of transforms</li>
+          <li><strong>First Shifting Theorem</strong> – e^at·f(t) type</li>
+          <li><strong>Second Shifting Theorem</strong> – Heaviside U(t-a)·f(t-a)</li>
+          <li><strong>Inverse L.T. via partial fractions</strong></li>
+          <li><strong>Convolution theorem</strong> – integral equation type</li>
+          <li><strong>Solving ODEs by Laplace</strong> – 2nd order IVPs</li>
+          <li><strong>Dirac delta function</strong> – L{δ(t-a)}</li>
+          <li><strong>Fourier series</strong> – f(x) in [0, 2π] &amp; arbitrary period</li>
+        </ol>
+      </div>
+      <div class="info-card">
+        <h3>🔥 PDE Numericals</h3>
+        <ol>
+          <li><strong>Wave equation</strong> – separation of variables + boundary conditions</li>
+          <li><strong>D'Alembert's formula</strong> – direct application</li>
+          <li><strong>Heat equation</strong> – u_t = c²u_xx type</li>
+          <li><strong>Fourier series solutions of BVPs</strong></li>
+          <li><strong>Laplace equation in rectangle</strong> – Dirichlet BVP</li>
+          <li><strong>PDEs via Laplace transform</strong></li>
+          <li><strong>Half-range Fourier expansions</strong></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-section" id="revision">
+    <div class="special-header">
+      <div class="special-badge">⚡ FAST REVISION</div>
+      <div class="special-title">Fast Revision Order Before Exam</div>
+    </div>
+    <div class="info-card" style="max-width:100%">
+      <h3>⚡ Optimal Revision Sequence (Top to Bottom = Highest Priority)</h3>
+      <ol style="columns: 2; column-gap: 3rem; padding-left: 1.5rem;">
+        <li><strong>C–R Equations</strong> – theory + 3 solved problems</li>
+        <li><strong>Cauchy's Integral Formula</strong> – 5-mark solved numericals</li>
+        <li><strong>Laurent Series</strong> – expansion in region, classify singularity</li>
+        <li><strong>Residue Theorem &amp; Real Integrals</strong></li>
+        <li><strong>Möbius Transformations</strong> – 2 standard problems</li>
+        <li><strong>Inverse Laplace Transform</strong> – PF + convolution</li>
+        <li><strong>Second Shifting Theorem</strong> – Heaviside function types</li>
+        <li><strong>Fourier Series</strong> – half-range + arbitrary period</li>
+        <li><strong>Fourier Transform &amp; Inverse</strong> – properties + 2 numericals</li>
+        <li><strong>Wave Equation</strong> – separation of variables</li>
+        <li><strong>Heat Equation</strong> – 1D BVP</li>
+        <li><strong>D'Alembert's Solution</strong></li>
+        <li><strong>Roots of Complex Numbers</strong></li>
+        <li><strong>Log function &amp; Principal Value</strong></li>
+        <li><strong>Convolution Theorem (Laplace)</strong></li>
+        <li><strong>Dirichlet Problem / 2D Laplace</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="special-section" id="crash">
+    <div class="special-header">
+      <div class="special-badge">🚀 7-DAY PLAN</div>
+      <div class="special-title">Best Video Sequence for 7-Day Crash Preparation</div>
+    </div>
+    <div class="crash-grid">
+      <div class="day-card">
+        <div class="day-num">Day 1</div>
+        <div class="day-title" style="color:var(--accent1)">Complex Analysis I</div>
+        <div class="day-topics">• Syllabus review<br>• Geometric &amp; Polar form<br>• Roots of complex nos.<br>• Euler's formula / DeMoivre</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 2</div>
+        <div class="day-title" style="color:var(--accent1)">C–R Equations</div>
+        <div class="day-topics">• Analytic functions<br>• C–R (Cartesian, Polar)<br>• Harmonic conjugate<br>• Laplace's equation</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 3</div>
+        <div class="day-title" style="color:var(--accent2)">Complex Analysis II</div>
+        <div class="day-topics">• Cauchy Integral Thm &amp; Formula<br>• Log function<br>• Laurent Series<br>• Singularities &amp; Residues</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 4</div>
+        <div class="day-title" style="color:var(--accent2)">Residues &amp; Mapping</div>
+        <div class="day-topics">• Residue integration<br>• Real integrals via residues<br>• Möbius transformations<br>• Conformal mapping</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 5</div>
+        <div class="day-title" style="color:var(--accent3)">Laplace &amp; Fourier</div>
+        <div class="day-topics">• Laplace definition &amp; props<br>• 1st &amp; 2nd Shifting<br>• Inverse L.T.<br>• Convolution &amp; ODEs</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 6</div>
+        <div class="day-title" style="color:var(--accent3)">Fourier Analysis</div>
+        <div class="day-topics">• Fourier Series<br>• Even/odd &amp; half-range<br>• Fourier Transforms<br>• Inverse Fourier</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">Day 7</div>
+        <div class="day-title" style="color:var(--accent4)">PDEs Full Unit</div>
+        <div class="day-topics">• Wave &amp; Heat equations<br>• D'Alembert's solution<br>• Separation of variables<br>• Laplace transform PDEs</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.container -->
+
+<footer>
+  <p>Built for GGSIPU BTech Semester 2 Students · All videos from <strong>Study Buddy</strong> (@StudyBuddy_in) · <a href="https://www.youtube.com/playlist?list=PL5fCG6TOVhr4uENPleQY2-n1DChCcJTDU" target="_blank" style="color:var(--accent1)">Open Official Playlist ↗</a></p>
+  <p style="margin-top:8px;font-size:11px;color:#555">Tip: Bookmark this file and use it offline. All links open directly in YouTube.</p>
+</footer>
+
+</body>
+</html>
